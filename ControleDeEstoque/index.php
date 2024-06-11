@@ -18,21 +18,20 @@
     box-shadow: 10px 10px 47px -3px rgba(161, 161, 161, 1);
 }
 .bem-vindo {
-    color: green; /* Cor verde */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    color: green; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     text-align: left; 
 }
 .bem-vindo-sub {
     color: #78a479; 
-    font-size: 14px; /* Tamanho menor */
-    text-align: left; 
+    font-size: 14px; 
 }
 </style>
 
 <body>
     <div class="container tamanho-largura">
-        <h1 class="bem-vindo">Login</h1> <!-- Adicionando o título "Login" de forma estilizada -->
-        <p class="bem-vindo-sub">Bem-vindo ao StockEasy</p> <!-- Adicionando o texto "Bem-vindo ao StockEasy" -->
+       <h1 class="bem-vindo">Login</h1> 
+        <p class="bem-vindo-sub">Bem-vindo ao StockEasy</p> 
         <form action="logar.php" method="POST">
             <div class="form-group">
                 <br>

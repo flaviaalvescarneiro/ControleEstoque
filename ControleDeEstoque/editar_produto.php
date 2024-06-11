@@ -49,8 +49,8 @@ $id = $_GET['id'];
                 while($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)){
                     $idCategoria = $array["IdCategoria"];
                     $nomeCategoria = $array["Nome"];
-                ?>
-                <option><?=$nomeCategoria?></option>
+                    ?>
+                    <option <?php if($categoria == $nomeCategoria) echo 'selected'; ?>><?=$nomeCategoria?></option>
                 <?php }?>
             </select>
         </div>
@@ -58,13 +58,17 @@ $id = $_GET['id'];
         <div class="form-group">
             <label for="fornecedor">Fornecedor</label>
             <select class="form-control" id="fornecedor" name="fornecedor">
-                <option>Fornecedor A</option>
-                <option>Fornecedor B</option>
-                <option>Fornecedor C</option>
-                <option>Fornecedor D</option>
+                <?php
+                $sqlFornecedor = "SELECT * FROM fornecedor";
+                $retornoFornecedor = mysqli_query($conexao, $sqlFornecedor);
+                while ($arrayFornecedor = mysqli_fetch_array($retornoFornecedor, MYSQLI_ASSOC)) {
+                    $nomeFornecedor = $arrayFornecedor['Nome'];
+                    ?>
+                    <option <?php if($fornecedor == $nomeFornecedor) echo 'selected'; ?>><?=$nomeFornecedor?></option>
+                <?php } ?>
             </select>
         </div>
-        <button type="submit" class="btn-enviar btn btn-primary btn-sm btn-block">Atualizar</button>
+        <button type="submit" class="btn-enviar btn btn-success btn-sm btn-block">Atualizar</button>
         <?php } ?>
     </form>
 </div>
